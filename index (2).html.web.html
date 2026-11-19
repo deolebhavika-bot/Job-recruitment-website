@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name – Designer & Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#10243e;
+  --ink-soft:#4a5b73;
+  --saffron:#ff9f1c;
+  --saffron-deep:#e07f00;
+  --sky:#dcecf7;
+  --paper:#fbfcfd;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.65;font-size:1.05rem}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+
+/* header */
+header{position:sticky;top:0;z-index:5;background:rgba(251,252,253,.92);backdrop-filter:blur(8px);border-bottom:1px solid #e3e9f0}
+nav{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font-family:var(--display);font-weight:800;font-size:1.3rem;text-decoration:none}
+.logo span{color:var(--saffron-deep)}
+nav ul{display:flex;gap:1.6rem;list-style:none}
+nav ul a{text-decoration:none;font-weight:500;color:var(--ink-soft)}
+nav ul a:hover{color:var(--ink)}
+
+/* hero */
+.hero{background:var(--saffron);position:relative;overflow:hidden}
+.hero .wrap{padding-top:5rem;padding-bottom:6rem;position:relative}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.8rem,9vw,6.5rem);line-height:.98;letter-spacing:-.03em;max-width:11ch}
+.hero p{max-width:34rem;margin-top:1.6rem;font-size:1.2rem;color:#2b2208}
+.btns{display:flex;gap:.9rem;margin-top:2.2rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.85rem 1.6rem;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--ink);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.solid{background:var(--ink);color:#fff}
+.btn.line{background:transparent}
+.orb{position:absolute;right:-90px;top:50%;translate:0 -50%;width:min(46vw,480px);aspect-ratio:1;border-radius:50%;background:var(--ink)}
+.orb::after{content:"";position:absolute;inset:14%;border-radius:50%;background:var(--sky);animation:rise 1.2s ease-out both}
+@keyframes rise{from{transform:scale(.3);opacity:0}to{transform:scale(1);opacity:1}}
+
+/* sections */
+section{padding:5rem 0}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.02em;line-height:1.1;margin-bottom:1.2rem}
+.about{display:grid;grid-template-columns:1fr 1.4fr;gap:3rem;align-items:start}
+.about p+p{margin-top:1rem}
+.about p{color:var(--ink-soft)}
+.skills{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
+.skills li{list-style:none;background:var(--sky);padding:.35rem .95rem;border-radius:999px;font-size:.95rem;font-weight:500}
+
+.work{background:var(--ink);color:#fff}
+.work h2{color:#fff}
+.grid{display:grid;grid-template-columns:2fr 1fr;grid-auto-rows:minmax(220px,auto);gap:1.2rem;margin-top:2rem}
+.card{border-radius:22px;padding:1.8rem;display:flex;flex-direction:column;justify-content:flex-end;text-decoration:none;transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+.card h3{font-family:var(--display);font-size:1.5rem;line-height:1.15}
+.card p{margin-top:.4rem;font-size:.97rem;opacity:.85}
+.c1{background:var(--saffron);color:var(--ink);grid-row:span 2;min-height:460px}
+.c1 h3{font-size:2.2rem}
+.c2{background:var(--sky);color:var(--ink)}
+.c3{background:#fff;color:var(--ink)}
+
+.contact{text-align:left}
+.contact a.mail{display:inline-block;font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,6vw,3.6rem);letter-spacing:-.02em;text-decoration:none;border-bottom:5px solid var(--saffron);line-height:1.2;word-break:break-all}
+.contact a.mail:hover{color:var(--saffron-deep)}
+.social{display:flex;gap:1.4rem;margin-top:2rem;list-style:none;flex-wrap:wrap}
+.social a{font-weight:600;text-decoration:none;border-bottom:2px solid var(--sky)}
+.social a:hover{border-color:var(--saffron)}
+footer{border-top:1px solid #e3e9f0;padding:1.6rem 0;color:var(--ink-soft);font-size:.92rem}
+
+@media(max-width:760px){
+  nav ul{gap:1rem}
+  .orb{opacity:.35;right:-140px}
+  .about,.grid{grid-template-columns:1fr}
+  .c1{grid-row:auto;min-height:300px}
+  .hero .wrap{padding-top:3.5rem;padding-bottom:4rem}
+  section{padding:3.5rem 0}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap" aria-label="Main">
+    <a class="logo" href="#top">Your<span>Name</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="orb" aria-hidden="true"></div>
+    <div class="wrap">
+      <h1>I build things people enjoy using.</h1>
+      <p>Hi, I'm Your Name, a designer and developer from Nagpur. I make websites and apps that are clear, fast and easy on the eye.</p>
+      <div class="btns">
+        <a class="btn solid" href="#work">See my work</a>
+        <a class="btn line" href="#contact">Get in touch</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap about">
+      <h2>A little about me</h2>
+      <div>
+        <p>I started out tinkering with small web projects and never stopped. Today I help people and small businesses turn rough ideas into finished products.</p>
+        <p>I care about simple layouts, readable text and pages that load quickly on any phone.</p>
+        <ul class="skills">
+          <li>Web design</li>
+          <li>HTML &amp; CSS</li>
+          <li>JavaScript</li>
+          <li>Branding</li>
+          <li>Mobile-first</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="work">
+    <div class="wrap">
+      <h2>Selected work</h2>
+      <div class="grid">
+        <a class="card c1" href="#">
+          <h3>Project One</h3>
+          <p>A full website redesign that doubled sign-ups in two months.</p>
+        </a>
+        <a class="card c2" href="#">
+          <h3>Project Two</h3>
+          <p>Mobile app for local deliveries.</p>
+        </a>
+        <a class="card c3" href="#">
+          <h3>Project Three</h3>
+          <p>Brand identity and online store.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Have a project in mind?</h2>
+      <a class="mail" href="mailto:hello@example.com">hello@example.com</a>
+      <ul class="social">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">GitHub</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Your Name. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
